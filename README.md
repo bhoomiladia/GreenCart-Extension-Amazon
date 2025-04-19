@@ -1,71 +1,95 @@
-# GreenCart - Eco-Friendly Product Alternatives Extension
+# GreenCart - Eco-Friendly Product Alternatives Extension  
 
-## Overview
+## 📌 Overview  
 
-GreenCart is a Chrome extension that helps users discover more sustainable alternatives to products they're viewing on Amazon. When browsing product pages, the extension:
+GreenCart is a Chrome extension that helps users discover sustainable alternatives to products on Amazon. It analyzes product titles, calculates a sustainability score, and recommends eco-friendly alternatives with higher scores.  
 
-1. Analyzes the current product's sustainability score based on its title
-2. Recommends higher-scoring eco-friendly alternatives
-3. Displays the alternatives directly in the popup for easy access
+---
 
-## Features
+## ✨ Features  
 
-- Sustainability Scoring: Calculates a score based on eco-friendly keywords in product titles
-- Smart Recommendations: Finds similar products with higher sustainability scores
-- Direct Links: Provides quick access to recommended alternatives
-- Real-time Analysis: Works instantly as you browse Amazon product pages
+✅ **Sustainability Scoring** – Rates products based on eco-friendly keywords (e.g., "bamboo," "recycled")  
+✅ **Smart Recommendations** – Finds similar but more sustainable products  
+✅ **One-Click Access** – Direct links to recommended alternatives  
+✅ **Real-Time Analysis** – Works instantly on Amazon product pages  
 
-## Installation
+---
 
-1. Clone or download this repository
-2. Open Chrome and navigate to chrome://extensions/
-3. Enable "Developer mode" (toggle in top-right corner)
-4. Click "Load unpacked" and select the extension directory
+## 📥 Installation  
 
-## How It Works
+### **1. Install the Chrome Extension**  
+1. Download this repository (or clone via `git clone`).  
+2. Open Chrome and go to:  
+   ```
+   chrome://extensions/
+   ```  
+3. Enable **Developer Mode** (toggle in top-right).  
+4. Click **"Load unpacked"** and select the extension folder.  
 
-1. The extension activates when you visit an Amazon product page
-2. It extracts the product title and sends it to the local Flask server
-3. The server calculates a sustainability score and finds better alternatives
-4. Results are displayed in the extension popup
+### **2. Set Up the Backend Server**  
+1. Install Python dependencies:  
+   ```sh
+   pip install flask pandas scikit-learn
+   ```  
+2. Run the Flask server:  
+   ```sh
+   python app.py
+   ```  
+   (or execute the Jupyter notebook `app.ipynb`)  
 
-## Technical Components
+---
 
-- Frontend:
-  - Chrome extension with content script, popup, and background service worker
-  - Clean, minimalist UI showing score and alternatives
+## 🔍 How It Works  
 
-- Backend:
-  - Flask server with product recommendation logic
-  - TF-IDF vectorization and cosine similarity for product matching
-  - Sustainability scoring based on keyword analysis
+1. **When you visit an Amazon product page**, the extension extracts the product title.  
+2. **The title is sent to the local Flask server**, which:  
+   - Calculates a sustainability score.  
+   - Finds similar but more eco-friendly alternatives.  
+3. **Results appear in the popup**, showing:  
+   - The current product's sustainability score.  
+   - Recommended alternatives with higher scores.  
 
-## Dataset
+---
 
-The product data comes from [Amazon Product Dataset on Kaggle](https://www.kaggle.com/datasets). We've enhanced it with sustainability scoring.
+## 📂 Dataset Setup  
 
-## Dependencies
+### **Downloading the Amazon Product Dataset from Kaggle**  
+1. **Go to Kaggle**:  
+   - Dataset used: [Amazon Product Dataset](https://www.kaggle.com/datasets/asaniczka/amazon-products-dataset-2023-1-4m-products)   
 
-- Python 3.x
-- Flask
-- pandas
-- scikit-learn
-- Chrome browser
+2. **Download the dataset**:  
+   - If you don’t have a Kaggle account, sign up first.  
+   - Go to the dataset page and click **"Download"**.  
 
-## Running the Backend
+3. **Prepare the dataset**:  
+   - Extract the downloaded file.  
+   - Place `amazon_products_final.csv` in the same folder as `app.py`.  
+   - The Flask server will automatically load it.  
 
-1. Install requirements: pip install flask pandas scikit-learn
-2. Run the server: python app.py (or run the Jupyter notebook)
-3. The server will start at http://localhost:5000
+---
 
-## Future Improvements
+## 🛠️ Dependencies  
 
-- Expand keyword list for better scoring
-- Add more product categories
-- Include user feedback mechanism
-- Support for other e-commerce sites
+- **Python 3.x** (with `flask`, `pandas`, `scikit-learn`)  
+- **Chrome browser** (for the extension)  
 
-## Credits
+---
 
-- Product dataset: [Kaggle Amazon Product Dataset](https://www.kaggle.com/datasets)
-- Sustainability scoring algorithm: Custom implementation
+## 🚀 Future Improvements  
+
+🔹 Expand sustainability keyword coverage  
+🔹 Support more e-commerce sites (e.g., Walmart, eBay)  
+🔹 Add user feedback for better recommendations  
+🔹 Improve scoring with machine learning  
+
+---
+
+## 📜 Credits  
+
+- **Dataset**: [Kaggle Amazon Product Dataset](https://www.kaggle.com/datasets/asaniczka/amazon-products-dataset-2023-1-4m-products)  
+- **Sustainability Algorithm**: Custom implementation  
+
+---
+
+
+### 🌿 Happy Sustainable Shopping! 🌿
