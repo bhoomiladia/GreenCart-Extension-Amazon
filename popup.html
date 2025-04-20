@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2ecc71;
+      --primary-light: #d5f5e3;
+      --secondary: #3498db;
+      --alert: #e74c3c;
+      --text: #2c3e50;
+      --text-light: #7f8c8d;
+      --bg: #f5f7fa;
+      --card: #ffffff;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      padding: 16px;
+      width: 350px;
+      margin: 0;
+    }
+
+    #current-score {
+      font-size: 24px;
+      font-weight: 600;
+      text-align: center;
+      padding: 16px;
+      background: var(--card);
+      border-radius: 12px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .score-good {
+      color: var(--primary);
+    }
+
+    .score-average {
+      color: #f39c12;
+    }
+
+    .score-poor {
+      color: var(--alert);
+    }
+
+    #results {
+      font-size: 14px;
+    }
+
+    .product-card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .loading-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .spinner {
+      border: 3px solid rgba(46, 204, 113, 0.2);
+      border-radius: 50%;
+      border-top: 3px solid var(--primary);
+      width: 24px;
+      height: 24px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 12px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+      color: var(--text-light);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="current-score" style="font-weight: bold; margin-bottom: 10px;">
+    <!-- Sustainability Score will be injected here -->
+  </div>
+  <div id="results">
+    <div class="loading-container">
+      <div class="spinner"></div>
+      <div class="loading-text">Analyzing product...</div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
